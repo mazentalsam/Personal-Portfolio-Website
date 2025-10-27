@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mazen Talsam Portfolio</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- ===== Cinematic Intro ===== -->
+  <div id="intro">
+    <div class="intro-content">
+      <h1 class="typing-text">Mazen Talsam</h1>
+      <p class="intro-sub">Welcome to my Portfolio</p>
+      <img src="assets/images/logo.png" alt="Mazen Logo" class="intro-logo">
+    </div>
+  </div>
+
+  <div class="page-fade">
+
+    <!-- ===== Header ===== -->
+    <div id="header">
+      <div class="container">
+        <nav>
+          <a href="#header">
+            <img src="assets/images/logo.png" class="logo" alt="Logo">
+          </a>
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#header2">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+          </ul>
+          <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+
+        <div class="header-text">
+          <h1>Hey, I'm <span>Mazen.</span></h1>
+          <p>
+            I'm a second-year <span>Computer Science</span> student at
+            <span>Wilfrid Laurier University</span><br>
+            with a passion for coding and problem-solving.
+          </p>
+
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/mazen-talsam-8070a42b0/" class="fa">
+              <img src="assets/icons/linkedin.png" alt="LinkedIn" width="50" height="50">
+            </a>
+            <a href="https://github.com/mazentalsam" class="fa">
+              <img src="assets/icons/github.png" alt="GitHub" width="50" height="50">
+            </a>
+            <a href="mailto:mazentbusiness@gmail.com" class="fa">
+              <img src="assets/icons/mail.png" alt="Mail" width="50" height="50">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!------ ABOUT SECTION ------->
+<div id="about">
+  <div class="container">
+    <div class="row">
+      
+      <!-- Left Column: Profile Image -->
+      <div class="about-col-1">
+        <img src="assets/images/IMG_4949.jpeg" alt="Profile Photo">
+      </div>
+
+      <!-- Right Column: About Content -->
+      <div class="about-col-2">
+        <h1 class="sub-title">About Me</h1>
+        <p>
+          I’m a <span class="highlight">second-year Computer Science student</span> at Wilfrid Laurier University with a <span class="highlight">GPA of 3.0</span>. 
+          My passion for programming started early—my dad’s background in computer science inspired me to explore technology, 
+          creativity, and problem-solving from a young age. Over time, that spark turned into a commitment to building meaningful, 
+          user-focused software that combines technical precision with design and innovation.
+        </p>
+        <br>
+        <p>
+          I specialize in <span class="highlight">Python</span>, <span class="highlight">Flask</span>, and <span class="highlight">web development</span>, 
+          while continuing to expand my skills in <span class="highlight">Java</span>, <span class="highlight">cybersecurity</span>, and 
+          <span class="highlight">artificial intelligence</span>. I’m eager to apply my skills in real-world projects, internships, 
+          and team environments where I can contribute, grow, and learn from others. Outside of coding, I enjoy staying active, 
+          exploring new interests, and connecting with like-minded people who share a passion for technology and innovation.
+        </p>
+
+        <!-- Tab Buttons -->
+        <div class="tab-titles">
+          <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+          <p class="tab-links" onclick="opentab('experience')">Experience</p>
+          <p class="tab-links" onclick="opentab('education')">Education</p>
+        </div>
+
+        <!-- ================= SKILLS ================= -->
+        <div class="tab-contents active-tab" id="skills">
+          <ul>
+            <li><span>Python</span><br>
+              Proficient in <span class="highlight">Python</span> for automation, data analysis, and full-stack development using frameworks like <span class="highlight">Flask</span>. 
+              Experienced with libraries such as <span class="highlight">Pandas</span> and <span class="highlight">Requests</span> to build efficient, scalable solutions.
+            </li>
+
+            <li><span>JavaScript / HTML / CSS</span><br>
+              Skilled in creating responsive, interactive web applications with <span class="highlight">JavaScript</span>, 
+              <span class="highlight">HTML5</span>, and <span class="highlight">CSS3</span>. Focused on accessibility, performance, and smooth UI/UX design.
+            </li>
+
+            <li><span>Flask & Back-End Development</span><br>
+              Built and deployed multiple full-stack applications using <span class="highlight">Flask</span>, 
+              <span class="highlight">SQLite</span>, and RESTful APIs. Experienced in managing authentication, sessions, and database integration.
+            </li>
+
+            <li><span>SQL & Databases</span><br>
+              Solid experience with <span class="highlight">SQL</span> and database design. 
+              Skilled in creating normalized schemas, writing optimized queries, and integrating databases with Python applications.
+            </li>
+
+            <li><span>Java</span><br>
+              Currently learning <span class="highlight">Java</span> for object-oriented programming, data structures, and algorithm design.
+            </li>
+
+            <li><span>Problem-Solving & Algorithms</span><br>
+              Regularly practice on <span class="highlight">LeetCode</span> and coursework problems. 
+              Strong understanding of <span class="highlight">arrays</span>, <span class="highlight">linked lists</span>, <span class="highlight">recursion</span>, 
+              and <span class="highlight">sorting/searching algorithms</span>.
+            </li>
+
+            <li><span>Git & Collaboration</span><br>
+              Experienced with <span class="highlight">Git</span> and <span class="highlight">GitHub</span> for version control, team collaboration, and clean project management workflows.
+            </li>
+
+            <li><span>Soft Skills</span><br>
+              Strong <span class="highlight">communication</span>, <span class="highlight">teamwork</span>, and <span class="highlight">leadership</span> abilities, 
+              developed through my involvement in the <span class="highlight">Laurier Computing Society</span> and group-based coding projects.
+            </li>
+          </ul>
+        </div>
+
+        <!-- ================= EXPERIENCE ================= -->
+        <div class="tab-contents" id="experience">
+          <ul>
+            <li><span>First-Year Representative</span><br>
+              <span class="highlight">Laurier Computing Society — Jan 2025 – Sep 2025</span><br><br>
+              As a <span class="highlight">First-Year Representative</span> for the Laurier Computing Society, I’ve had the opportunity to 
+              strengthen the bridge between first-year students and the broader Computer Science community. 
+              I help organize hackathons, tech talks, and coding workshops, encouraging student participation and collaboration. 
+              This experience has allowed me to develop my <span class="highlight">leadership</span>, 
+              <span class="highlight">event coordination</span>, and <span class="highlight">community engagement</span> skills while fostering inclusivity and innovation on campus.
+            </li>
+
+            <li><span>Personal Projects</span><br><br>
+              I enjoy turning ideas into practical applications that merge design, logic, and creativity:
+              <ul style="margin-top: 10px;">
+                <li>
+                  <span class="highlight">GoalMate – AI-Powered Goal Tracker</span> | Flask, JavaScript, Chart.js, SQLite, OpenAI API — <i>In Development</i><br>
+                  A full-stack productivity app that helps users set, manage, and achieve goals through <span class="highlight">AI-generated insights</span>, 
+                  motivational prompts, and data visualizations. 
+                  The app uses <span class="highlight">Flask</span> for the back-end, <span class="highlight">Chart.js</span> for tracking progress, 
+                  and <span class="highlight">OpenAI API</span> for intelligent feedback and task suggestions.
+                </li>
+                <li>
+                  <span class="highlight">Islamic Discipline & Learning Platform</span> | Python, JavaScript, Google Cloud API<br>
+                  Developed an educational web app that promotes self-discipline through Islamic teachings. 
+                  Integrated an <span class="highlight">AI assistant</span> for conversational learning and implemented 
+                  <span class="highlight">Google Cloud API</span> for real-time Qibla direction tracking based on user location.
+                </li>
+                <li>
+                  <span class="highlight">Personal Portfolio Website</span> | HTML, CSS, JavaScript<br>
+                  Designed and developed a responsive and visually polished personal portfolio (the site you’re viewing now!) 
+                  to showcase my projects, experiences, and personal journey in computer science. 
+                  Features smooth animations, interactive tabs, and a modern minimalist UI.
+                </li>
+              </ul>
+            </li>
+
+            <li><span>Hackathons</span><br><br>
+              Participated in multiple <span class="highlight">hackathons</span> where I collaborated with students from diverse technical backgrounds to 
+              design functional prototypes in limited timeframes. These events sharpened my 
+              <span class="highlight">problem-solving</span>, <span class="highlight">collaboration</span>, and <span class="highlight">time management</span> skills 
+              while exposing me to new tools and technologies in real-world development scenarios.
+            </li>
+
+            <li><span>No Frills</span><br>
+              <span class="highlight">Jan 2022 – Present</span><br><br>
+              Developed strong <span class="highlight">communication</span>, <span class="highlight">efficiency</span>, and 
+              <span class="highlight">teamwork</span> skills in a fast-paced retail environment. 
+              Learned to stay organized under pressure—skills that directly translate to debugging, 
+              working in agile teams, and delivering software on tight deadlines.
+            </li>
+          </ul>
+        </div>
+
+        <!-- ================= EDUCATION ================= -->
+        <div class="tab-contents" id="education">
+          <ul>
+            <li>
+              <span>Wilfrid Laurier University</span><br><br>
+              I am a <span class="highlight">second-year Computer Science (BSc) student</span> at Wilfrid Laurier University with a <span class="highlight">GPA of 3.0</span>. 
+              As a full-time student, I am dedicated to mastering key areas such as <span class="highlight">software development</span>, 
+              <span class="highlight">data structures</span>, and <span class="highlight">algorithms</span>.  
+              <br><br>
+              Beyond academics, I’m an <span class="highlight">outgoing</span> and <span class="highlight">curious learner</span> who thrives in collaborative settings. 
+              I enjoy connecting with peers, contributing to <span class="highlight">tech communities</span>, and participating in events that inspire innovation.  
+              My goal is to continue growing technically and personally while pursuing my interests in 
+              <span class="highlight">AI</span>, <span class="highlight">cybersecurity</span>, and <span class="highlight">full-stack development</span>.
+            </li>
+            <br>
+            <img src="assets/images/laurier.jpg" alt="Wilfrid Laurier University" style="width:700px;height:300px;" class="center">
+          </ul>
+        </div>
+
+      </div> <!-- about-col-2 END -->
+    </div> <!-- row END -->
+  </div> <!-- container END -->
+</div> <!-- about END -->
+
+<!-- ===== Projects Section ===== -->
+<div id="header2">
+  <div class="container">
+    <h1 class="sub-title2">Personal Projects</h1>
+
+    <div class="projects-grid">
+
+      <!-- === Project 1 === -->
+      <div class="project-card">
+        <img src="assets/images/portfolio.png" alt="Portfolio Project" class="project-img">
+        <h2 class="project-title">Personal Portfolio Website</h2>
+        <p class="project-tech">JavaScript • HTML • CSS</p>
+        <p class="project-desc">
+          Built this responsive portfolio to showcase my work with modern design and accessibility.
+        </p>
+        <button class="btn-red" onclick="openModal('modal1')">Learn More</button>
+      </div>
+
+      <!-- === Project 2 === -->
+      <div class="project-card">
+        <img src="assets/images/islam.png" alt="Islamic Platform" class="project-img">
+        <h2 class="project-title">Islamic Discipline & Learning Platform</h2>
+        <p class="project-tech">Python • JavaScript • Google Cloud API</p>
+        <p class="project-desc">
+          AI-powered platform teaching discipline through Islamic learning tools and Qibla tracking.
+        </p>
+        <button class="btn-red" onclick="openModal('modal2')">Learn More</button>
+      </div>
+
+      <!-- === Project 3 === -->
+      <div class="project-card">
+        <img src="assets/images/goalmate.png" alt="GoalMate App" class="project-img">
+        <h2 class="project-title">GoalMate – AI Goal Tracker</h2>
+        <p class="project-tech">Flask • JavaScript • SQLite • OpenAI API</p>
+        <p class="project-desc">
+          AI productivity app offering intelligent goal feedback and analytics tracking.
+        </p><br>
+        <button class="btn-red" onclick="openModal('modal3')">Learn More</button>
+      </div>
+
+    </div>
+
+    <div class="projects-footer">
+      <p>⚡ Always exploring new ideas and building exciting projects — stay tuned for more!</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PROJECT MODALS ===== -->
+<!-- Modal 1 -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal1')">&times;</span>
+    <h2>Personal Portfolio Website</h2>
+    <img src="assets/images/portfolio.png" alt="Portfolio Preview" class="modal-img">
+    <p>
+      This portfolio was designed and coded entirely from scratch using 
+      <span class="highlight">HTML, CSS, and JavaScript</span>. 
+      It features smooth transitions, mobile responsiveness, and interactive navigation.
+    </p>
+    <p>
+      It serves as a central hub for my professional presence — showcasing my 
+      <span class="highlight">skills, projects, and experience</span>.
+    </p>
+    <a href="#" class="btn btn2">View Project</a>
+    <a href="#" class="btn btn3">View on GitHub</a>
+  </div>
+</div>
+
+<!-- Modal 2 -->
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal2')">&times;</span>
+    <h2>Islamic Discipline & Learning Platform</h2>
+    <img src="assets/images/islam.png" alt="Islamic App Preview" class="modal-img">
+    <p>
+      A web-based learning tool designed to promote self-discipline and spiritual education 
+      using modern technologies.
+    </p>
+    <p>
+      Built with <span class="highlight">Python (Flask)</span> and integrated with 
+      <span class="highlight">Google Cloud APIs</span> for real-time 
+      <span class="highlight">Qibla tracking</span> and an 
+      <span class="highlight">AI-powered Q&A assistant</span>.
+    </p>
+    <a href="https://neon-meringue-3f4616.netlify.app/" class="btn btn2">View Project</a>
+    <a href="https://github.com/mazentalsam/islamic-ai-website" class="btn btn3">View on GitHub</a>
+  </div>
+</div>
+
+<!-- Modal 3 -->
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal3')">&times;</span>
+    <h2>GoalMate – AI Goal Tracker</h2>
+    <img src="assets/images/goalmate.png" alt="GoalMate App Preview" class="modal-img">
+    <p>
+      An <span class="highlight">AI-driven productivity app</span> that helps users 
+      set, track, and analyze their goals through smart insights and interactive data visualizations.
+    </p>
+    <p>
+      Developed using <span class="highlight">Flask</span>, 
+      <span class="highlight">SQLite</span>, and 
+      <span class="highlight">OpenAI API</span> to provide personalized motivation 
+      and data-driven feedback.
+    </p>
+    <a href="#" class="btn btn2">Coming Soon</a>
+    <a href="https://github.com/mazentalsam/Goal-Tracker-Website" class="btn btn3">View on GitHub</a>
+  </div>
+</div>
+
+
+    
+    <!-- ===== Contact Section ===== -->
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Let's Connect!</h1>
+            <p><i class="fa-solid fa-paper-plane"></i> mazentbusiness@gmail.com</p>
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/in/mazen-talsam-8070a42b0/"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="mailto:mazentbusiness@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+              <a href="https://github.com/mazentalsam"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <a href="assets/pdf/my-resume.pdf" download class="btn btn2">Download Resume</a>
+          </div>
+
+          <div class="contact-right">
+            <form name="submit-to-google-sheet">
+              <input type="text" name="Name" placeholder="Your Name" required>
+              <input type="email" name="email" placeholder="Your Email" required>
+              <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+              <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p><i class="fa-solid fa-copyright"></i> Copyright © 2025 Mazen Talsam</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Scripts ===== -->
+  <script src="assets/js/app.js"></script>
+
+</body>
+</html>
