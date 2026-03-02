@@ -314,7 +314,7 @@
             </div>
             <h3 class="blog-title">Founding csjobs.ca: Building Ontario's #1 CS Job Platform</h3>
             <p class="blog-excerpt">How I built a job aggregation platform from scratch — Python scrapers, Flask APIs, deduplication pipelines, and scaling to 300+ concurrent users.</p>
-            <a href="#" class="blog-read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <a href="#" class="blog-read-more" onclick="openModal('modal-blog1'); return false;">Read more <i class="fas fa-arrow-right"></i></a>
           </article>
 
           <article class="blog-card reveal-card">
@@ -324,7 +324,7 @@
             </div>
             <h3 class="blog-title">Shipping AI Backends at Vosyn: DRF, Docker & Production Scale</h3>
             <p class="blog-excerpt">What I learned building production REST APIs with Django REST Framework, containerizing with Docker, and managing multi-tenant auth at an AI startup.</p>
-            <a href="#" class="blog-read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <a href="#" class="blog-read-more" onclick="openModal('modal-blog2'); return false;">Read more <i class="fas fa-arrow-right"></i></a>
           </article>
 
           <article class="blog-card reveal-card">
@@ -334,7 +334,7 @@
             </div>
             <h3 class="blog-title">Real-Time Chat from Scratch: Building a Discord Clone</h3>
             <p class="blog-excerpt">A deep dive into building real-time messaging with TypeScript, Supabase, and Prisma ORM — and what I'd do differently next time.</p>
-            <a href="#" class="blog-read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <a href="#" class="blog-read-more" onclick="openModal('modal-blog3'); return false;">Read more <i class="fas fa-arrow-right"></i></a>
           </article>
 
         </div>
@@ -505,6 +505,97 @@
       <div class="modal-buttons">
         <a href="https://mazentalsam.com" class="modal-btn primary"><i class="fas fa-eye"></i> Live Site</a>
         <a href="https://github.com/mazentalsam" class="modal-btn secondary"><i class="fab fa-github"></i> GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog Modal 1 — csjobs.ca -->
+  <div id="modal-blog1" class="modal">
+    <div class="modal-content blog-modal">
+      <button class="close" onclick="closeModal('modal-blog1')"><i class="fas fa-xmark"></i></button>
+      <div class="blog-modal-meta">
+        <span class="blog-tag">Startup</span>
+        <span class="blog-modal-date">Mar 2026 · 4 min read</span>
+      </div>
+      <h2>Founding csjobs.ca: Building Ontario's #1 CS Job Platform</h2>
+      <p>Back in early 2026, I was frustrated. Every CS student I knew was using five different job boards, manually checking each one every morning. So I built one that checks them all.</p>
+      <p>csjobs.ca started as a weekend project and turned into a full production platform serving 300+ concurrent users. Here's what went into it.</p>
+
+      <h3 class="blog-modal-heading">The Architecture</h3>
+      <p>The core is a set of Python web scrapers that hit 10+ job boards on a schedule. Each scraper is isolated — if one breaks (and they always eventually do), the rest keep running. The scraped data flows into a <span class="highlight">Flask REST API</span> with a <span class="highlight">SQLite backend</span>.</p>
+      <p>The biggest challenge was deduplication. The same posting shows up on Indeed, LinkedIn, Glassdoor, and the company's own site simultaneously. I built a hashing pipeline that fingerprints each job by company, title, and location — so you only ever see it once.</p>
+
+      <h3 class="blog-modal-heading">Scaling to 300+ Users</h3>
+      <p>SQLite's write concurrency becomes a bottleneck fast. I'm migrating to PostgreSQL before the public launch. The Flask app itself is stateless, which makes horizontal scaling straightforward — no session state to manage.</p>
+      <p>The frontend is vanilla JS with client-side search and filtering. No framework. Fast load times, zero build tooling overhead.</p>
+
+      <h3 class="blog-modal-heading">What I Learned</h3>
+      <p>Design for deduplication from day one — retrofitting it is painful. Rate limiting on scrapers isn't optional; you <em>will</em> get IP banned. And vanilla JS + server-side rendering outperforms a heavy framework for content-heavy sites.</p>
+      <p>csjobs.ca is deploying soon. Built for Canadian CS students, by one.</p>
+
+      <div class="modal-buttons">
+        <a href="#" class="modal-btn disabled"><i class="fas fa-clock"></i> csjobs.ca — Coming Soon</a>
+        <a href="https://github.com/mazentalsam" class="modal-btn secondary"><i class="fab fa-github"></i> GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog Modal 2 — Vosyn -->
+  <div id="modal-blog2" class="modal">
+    <div class="modal-content blog-modal">
+      <button class="close" onclick="closeModal('modal-blog2')"><i class="fas fa-xmark"></i></button>
+      <div class="blog-modal-meta">
+        <span class="blog-tag">Backend</span>
+        <span class="blog-modal-date">Feb 2026 · 5 min read</span>
+      </div>
+      <h2>Shipping AI Backends at Vosyn: DRF, Docker & Production Scale</h2>
+      <p>My first week at Vosyn, I got handed a Django REST Framework codebase with 47 open endpoints, no documentation, and a sprint deadline. Best onboarding I've ever had.</p>
+
+      <h3 class="blog-modal-heading">DRF at Scale</h3>
+      <p>Django REST Framework is deceptively simple to start and deceptively hard to master. The biggest wins came from custom serializer validation for AI payload schemas — the shapes change constantly as models evolve. I also implemented ViewSet-level caching to avoid re-running expensive inference calls, and fixed N+1 query patterns across the hot paths using <span class="highlight">select_related()</span> and <span class="highlight">prefetch_related()</span>. One bad query in an AI pipeline can add 800ms to every request.</p>
+
+      <h3 class="blog-modal-heading">Docker is Non-Negotiable</h3>
+      <p>Every service runs in a container. Before Docker, "works on my machine" killed two sprint cycles. After: new environment setup takes 10 minutes. I wrote multi-stage Dockerfiles that kept production images lean — no dev dependencies, no test files — cutting image size by over 60%.</p>
+
+      <h3 class="blog-modal-heading">PostgreSQL vs NoSQL</h3>
+      <p>For AI workflows, you need both. Structured user data, auth, and logs go to <span class="highlight">PostgreSQL</span>. Unstructured model outputs, embeddings, and metadata go to <span class="highlight">NoSQL</span>. Knowing when to use each is the actual skill — not picking one and forcing everything into it.</p>
+
+      <h3 class="blog-modal-heading">What I'd Tell My Past Self</h3>
+      <p>Don't write raw SQL unless you have to. Use the ORM. But understand the SQL it generates — run EXPLAIN ANALYZE on every query that touches a hot path. Shipping at an AI startup means requirements change when the model changes. You build for flexibility, not rigidity.</p>
+
+      <div class="modal-buttons">
+        <a href="https://vosyn.ai" target="_blank" class="modal-btn primary"><i class="fas fa-arrow-up-right-from-square"></i> Vosyn</a>
+        <a href="https://github.com/mazentalsam" class="modal-btn secondary"><i class="fab fa-github"></i> GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog Modal 3 — Discord Clone -->
+  <div id="modal-blog3" class="modal">
+    <div class="modal-content blog-modal">
+      <button class="close" onclick="closeModal('modal-blog3')"><i class="fas fa-xmark"></i></button>
+      <div class="blog-modal-meta">
+        <span class="blog-tag">Full-Stack</span>
+        <span class="blog-modal-date">Jan 2026 · 4 min read</span>
+      </div>
+      <h2>Real-Time Chat from Scratch: Building a Discord Clone</h2>
+      <p>I built a Discord clone to learn TypeScript properly. Three weeks later I had real-time messaging, authentication, and a genuinely usable app deployed to production. Here's what I learned.</p>
+
+      <h3 class="blog-modal-heading">The Stack</h3>
+      <p><span class="highlight">TypeScript</span> + <span class="highlight">React</span> on the front, <span class="highlight">Supabase</span> for the database and real-time subscriptions, <span class="highlight">Prisma ORM</span> for type-safe queries, deployed on <span class="highlight">Railway</span>. This stack is genuinely fast to ship with — Supabase gives you auth, a Postgres database, and real-time out of the box.</p>
+
+      <h3 class="blog-modal-heading">Real-Time Messaging</h3>
+      <p>Supabase's real-time engine uses PostgreSQL's LISTEN/NOTIFY under the hood. Setting up a subscription is a few lines of code. The hard part isn't the subscription — it's handling <strong>optimistic updates</strong> correctly. When a user sends a message, it should appear instantly in the UI before the server confirms it. If the server rejects it (auth failure, rate limit), you need to roll it back cleanly without breaking the message order.</p>
+
+      <h3 class="blog-modal-heading">Why Prisma</h3>
+      <p>If you're writing TypeScript and not using Prisma, you're working too hard. The schema is the single source of truth for your entire data layer. The generated types mean you catch database shape mismatches at compile time — not at 2am in production after a schema migration.</p>
+
+      <h3 class="blog-modal-heading">What I'd Do Differently</h3>
+      <p>The auth flow ended up too tightly coupled to UI components. I'd move all auth logic to a dedicated context layer from day one instead of refactoring mid-project. Also: test your real-time logic under poor network conditions from the start. Adding offline resilience as an afterthought is painful.</p>
+      <p>The app is live on Railway. It works. And I understand TypeScript significantly better now.</p>
+
+      <div class="modal-buttons">
+        <a href="https://github.com/mazentalsam" class="modal-btn primary"><i class="fab fa-github"></i> View on GitHub</a>
       </div>
     </div>
   </div>
